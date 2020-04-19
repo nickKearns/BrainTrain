@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,7 +109,6 @@
 				8CBC37372DB34FA1C511C237 /* Pods-ColorTrain.debug.xcconfig */,
 				DEB05B4AAC792A305DF00784 /* Pods-ColorTrain.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

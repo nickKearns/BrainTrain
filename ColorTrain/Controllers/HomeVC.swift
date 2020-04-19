@@ -67,6 +67,28 @@ class HomeVC: UIViewController {
     }()
     
     
+    let yesButton: MDCFloatingButton = {
+        let yesButton = MDCFloatingButton(shape: MDCFloatingButtonShape.default)
+        yesButton.mode = .normal
+        yesButton.translatesAutoresizingMaskIntoConstraints = false
+        yesButton.setImage(UIImage(named: "checkmark"), for: .normal)
+        yesButton.backgroundColor = .white
+        
+        return yesButton
+    }()
+    
+    
+    let noButton: MDCFloatingButton = {
+        let noButton = MDCFloatingButton(shape: MDCFloatingButtonShape.default)
+        noButton.mode = .normal
+        noButton.translatesAutoresizingMaskIntoConstraints = false
+        noButton.setImage(UIImage(named: "no"), for: .normal)
+        noButton.backgroundColor = .white
+        
+        return noButton
+    }()
+    
+    
     
     
     
@@ -87,6 +109,9 @@ class HomeVC: UIViewController {
         scrollView.addSubview(timeLabel)
         scrollView.addSubview(colorLabel)
         scrollView.addSubview(wordLabel)
+        scrollView.addSubview(yesButton)
+        scrollView.addSubview(noButton)
+        
         
         
         
@@ -108,17 +133,23 @@ class HomeVC: UIViewController {
             scoreLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 25),
             timeLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 100),
             timeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 25)
-        
+            
         ])
         
         NSLayoutConstraint.activate([
-            colorLabel.centerYAnchor.constraint(equalToSystemSpacingBelow: scrollView.centerYAnchor, multiplier: 0.50),
+            colorLabel.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor, constant: -100),
             colorLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -100),
-            wordLabel.centerYAnchor.constraint(equalToSystemSpacingBelow: scrollView.centerYAnchor, multiplier: 0.50),
+            wordLabel.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor, constant: -100),
             wordLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 100)
-        
+            
         ])
         
+        NSLayoutConstraint.activate([
+            yesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -100),
+            yesButton.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 75),
+            noButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 100),
+            noButton.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 75)
+        ])
         
         
         
