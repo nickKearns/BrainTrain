@@ -12,6 +12,7 @@
 		0187DE7A24478E0A006EE67F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187DE7924478E0A006EE67F /* HomeVC.swift */; };
 		0187DE7F24478E0D006EE67F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0187DE7E24478E0D006EE67F /* Assets.xcassets */; };
 		0187DE8224478E0D006EE67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0187DE8024478E0D006EE67F /* LaunchScreen.storyboard */; };
+		5724561459F410BB47DEA712 /* Pods_ColorTrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF54154F56863A6F4E74B4FB /* Pods_ColorTrain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0187DE7E24478E0D006EE67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0187DE8124478E0D006EE67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0187DE8324478E0D006EE67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CBC37372DB34FA1C511C237 /* Pods-ColorTrain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorTrain.debug.xcconfig"; path = "Target Support Files/Pods-ColorTrain/Pods-ColorTrain.debug.xcconfig"; sourceTree = "<group>"; };
+		DEB05B4AAC792A305DF00784 /* Pods-ColorTrain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorTrain.release.xcconfig"; path = "Target Support Files/Pods-ColorTrain/Pods-ColorTrain.release.xcconfig"; sourceTree = "<group>"; };
+		FF54154F56863A6F4E74B4FB /* Pods_ColorTrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorTrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724561459F410BB47DEA712 /* Pods_ColorTrain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0187DE7424478E0A006EE67F /* ColorTrain */,
 				0187DE7324478E0A006EE67F /* Products */,
+				B2596D28C4F51ECDD8828F29 /* Pods */,
+				3A058162CD634E14A972255B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +95,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3A058162CD634E14A972255B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF54154F56863A6F4E74B4FB /* Pods_ColorTrain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2596D28C4F51ECDD8828F29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC37372DB34FA1C511C237 /* Pods-ColorTrain.debug.xcconfig */,
+				DEB05B4AAC792A305DF00784 /* Pods-ColorTrain.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0187DE8624478E0D006EE67F /* Build configuration list for PBXNativeTarget "ColorTrain" */;
 			buildPhases = (
+				4CAC353A216D7EA8618741EE /* [CP] Check Pods Manifest.lock */,
 				0187DE6E24478E0A006EE67F /* Sources */,
 				0187DE6F24478E0A006EE67F /* Frameworks */,
 				0187DE7024478E0A006EE67F /* Resources */,
+				478CF183E76CB491F813E16C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +179,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		478CF183E76CB491F813E16C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorTrain/Pods-ColorTrain-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorTrain/Pods-ColorTrain-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorTrain/Pods-ColorTrain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CAC353A216D7EA8618741EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ColorTrain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0187DE6E24478E0A006EE67F /* Sources */ = {
@@ -294,6 +363,7 @@
 		};
 		0187DE8724478E0D006EE67F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CBC37372DB34FA1C511C237 /* Pods-ColorTrain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +382,7 @@
 		};
 		0187DE8824478E0D006EE67F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB05B4AAC792A305DF00784 /* Pods-ColorTrain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
