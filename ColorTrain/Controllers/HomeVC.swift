@@ -32,6 +32,7 @@ class HomeVC: UIViewController {
     let scoreLabel: UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont(name: "Avenir Heavy", size: 20)
         l.text = "Score: 0"
         l.sizeToFit()
         return l
@@ -40,10 +41,31 @@ class HomeVC: UIViewController {
     let timeLabel: UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont(name: "Avenir Heavy", size: 20)
         l.text = "Time:"
         l.sizeToFit()
         return l
     }()
+    
+    
+    let colorLabel: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont(name: "Avenir Heavy", size: 30)
+        l.text = "Placeholder"
+        l.textAlignment = .center
+        return l
+    }()
+    
+    let wordLabel: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont(name: "Avenir Heavy", size: 30)
+        l.text = "Placeholder"
+        l.textAlignment = .center
+        return l
+    }()
+    
     
     
     
@@ -56,11 +78,15 @@ class HomeVC: UIViewController {
         view.tintColor = .black
         scrollView.backgroundColor = .white
         
+        generateStep()
+        
         
         view.addSubview(scrollView)
         
         scrollView.addSubview(scoreLabel)
         scrollView.addSubview(timeLabel)
+        scrollView.addSubview(colorLabel)
+        scrollView.addSubview(wordLabel)
         
         
         
@@ -85,8 +111,22 @@ class HomeVC: UIViewController {
         
         ])
         
-    
+        NSLayoutConstraint.activate([
+            colorLabel.centerYAnchor.constraint(equalToSystemSpacingBelow: scrollView.centerYAnchor, multiplier: 0.50),
+            colorLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -100),
+            wordLabel.centerYAnchor.constraint(equalToSystemSpacingBelow: scrollView.centerYAnchor, multiplier: 0.50),
+            wordLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 100)
         
+        ])
+        
+        
+        
+        
+        
+    }
+    
+    
+    func generateStep() {
         
     }
     
