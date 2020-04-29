@@ -6,7 +6,6 @@ target 'ColorTrain' do
   use_frameworks!
 
   # Pods for ColorTrain
-  pod 'MaterialComponents/Buttons'
-  pod 'MaterialComponents/Cards'
-  pod 'MaterialComponents/Palettes'
+   pod 'MaterialComponents/Buttons'
+   pod 'MaterialComponents/Buttons'
 end

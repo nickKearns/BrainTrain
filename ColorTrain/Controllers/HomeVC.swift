@@ -19,14 +19,14 @@ class HomeVC: UIViewController {
         }
     }
     
-    let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false;
-        scrollView.backgroundColor = .white
-        scrollView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        return scrollView
-    }()
     
+    
+    let scrollView: UIScrollView = {
+        let s = UIScrollView()
+        s.translatesAutoresizingMaskIntoConstraints = false
+        s.isScrollEnabled = false
+        return s
+    }()
     
     
     let scoreLabel: UILabel = {
@@ -72,7 +72,7 @@ class HomeVC: UIViewController {
         yesButton.mode = .normal
         yesButton.translatesAutoresizingMaskIntoConstraints = false
         yesButton.setImage(UIImage(named: "checkmark"), for: .normal)
-        yesButton.backgroundColor = .white
+        yesButton.backgroundColor = .blue
         
         return yesButton
     }()
@@ -83,9 +83,18 @@ class HomeVC: UIViewController {
         noButton.mode = .normal
         noButton.translatesAutoresizingMaskIntoConstraints = false
         noButton.setImage(UIImage(named: "no"), for: .normal)
-        noButton.backgroundColor = .white
+        noButton.backgroundColor = .red
         
         return noButton
+    }()
+    
+    let startButton: MDCRaisedButton = {
+        let startButton = MDCRaisedButton()
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        startButton.setTitle("Start", for: .normal)
+        startButton.backgroundColor = .blue
+        
+        return startButton
     }()
     
     
@@ -95,15 +104,15 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        // Do any additional setup after loading the view
         view.tintColor = .black
+        
         scrollView.backgroundColor = .white
         
-        generateStep()
+        //        generateStep()
         
+        self.view.addSubview(scrollView)
         
-        view.addSubview(scrollView)
         
         scrollView.addSubview(scoreLabel)
         scrollView.addSubview(timeLabel)
@@ -111,6 +120,7 @@ class HomeVC: UIViewController {
         scrollView.addSubview(wordLabel)
         scrollView.addSubview(yesButton)
         scrollView.addSubview(noButton)
+        scrollView.addSubview(startButton)
         
         
         
@@ -128,12 +138,16 @@ class HomeVC: UIViewController {
                                            views: ["scrollView" : scrollView])
         )
         
+        
         NSLayoutConstraint.activate([
             scoreLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -100),
-            scoreLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 25),
+            scoreLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 150),
             timeLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 100),
-            timeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 25)
-            
+            timeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 150)
+        
+        
+        
+        
         ])
         
         NSLayoutConstraint.activate([
@@ -152,9 +166,36 @@ class HomeVC: UIViewController {
         ])
         
         
+        NSLayoutConstraint.activate([
+            startButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            startButton.topAnchor.constraint(equalTo: noButton.bottomAnchor, constant: 150)
+        
+        
+        ])
+        
+        
+        
+        yesButton.addTarget(self, action: #selector(yesButtonTapped), for: .touchUpInside)
+        noButton.addTarget(self, action: #selector(noButtonTapped), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        
         
         
     }
+    
+    @objc func noButtonTapped() {
+        
+    }
+    
+    @objc func startButtonTapped() {
+        
+    }
+    
+    @objc func yesButtonTapped() {
+        
+    }
+    
+    
     
     
     func generateStep() {
@@ -163,4 +204,5 @@ class HomeVC: UIViewController {
     
     
 }
+
 

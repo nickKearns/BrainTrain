@@ -12,14 +12,6 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Cards (108.1.0):
-    - MaterialComponents/Elevation
-    - MaterialComponents/Ink
-    - MaterialComponents/private/Icons/ic_check_circle
-    - MaterialComponents/private/Math
-    - MaterialComponents/Ripple
-    - MaterialComponents/ShadowLayer
-    - MaterialComponents/Shapes
   - MaterialComponents/Elevation (108.1.0):
     - MaterialComponents/Availability
     - MaterialComponents/private/Color
@@ -28,13 +20,9 @@ PODS:
     - MaterialComponents/Availability
     - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - MaterialComponents/Palettes (108.1.0)
   - MaterialComponents/private/Application (108.1.0)
   - MaterialComponents/private/Color (108.1.0):
     - MaterialComponents/Availability
-  - MaterialComponents/private/Icons/Base (108.1.0)
-  - MaterialComponents/private/Icons/ic_check_circle (108.1.0):
-    - MaterialComponents/private/Icons/Base
   - MaterialComponents/private/Math (108.1.0)
   - MaterialComponents/Ripple (108.1.0):
     - MaterialComponents/AnimationTiming
@@ -56,8 +44,6 @@ PODS:
 
 DEPENDENCIES:
   - MaterialComponents/Buttons
-  - MaterialComponents/Cards
-  - MaterialComponents/Palettes
 
 SPEC REPOS:
   trunk:
@@ -70,6 +56,6 @@ SPEC CHECKSUMS:
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
 
-PODFILE CHECKSUM: 41203259aa557021ec038620f9bf16946cad0214
+PODFILE CHECKSUM: 4e7be80389f0df5a499b47b0a96a76b92470db8a
 
 COCOAPODS: 1.8.4
