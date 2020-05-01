@@ -24,8 +24,26 @@ enum Color: String, CaseIterable {
 
 
 
-struct ColorInstance {
+enum Difficulty: Int {
+    case easy
+    case medium
+    case hard
+    
+    var timeRemaining: Int {
+        switch  self {
+        case .easy:
+            return 10
+        case .medium:
+            return 7
+        case .hard:
+            return 5
+        }
+    }
+}
 
+
+struct ColorInstance {
+    
     func colorToUIColor(color: Color) -> UIColor {
         switch color {
         case .blue: return UIColor.blue
@@ -67,3 +85,4 @@ struct ColorInstance {
     
     
 }
+

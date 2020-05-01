@@ -12,6 +12,8 @@ import MaterialComponents
 class GameVC: UIViewController {
     
     
+    var difficulty: Difficulty = .easy
+    
     
     var score: Int = 0 {
         didSet {
@@ -23,11 +25,7 @@ class GameVC: UIViewController {
     var colorInstance = ColorInstance()
     
     var timer = Timer()
-    var timeRemaining = 10 {
-        didSet {
-            timeLabel.text = "Time Left: \(self.timeRemaining)"
-        }
-    }
+    var timeRemaining = 10
 
     
     
@@ -136,6 +134,10 @@ class GameVC: UIViewController {
         //        generateStep()
         
         self.view.addSubview(scrollView)
+        
+        
+        timeRemaining = self.difficulty.timeRemaining
+        
         //MARK: SETTING UP CONSTRAINTS
         
         scrollView.addSubview(scoreLabel)
@@ -220,7 +222,7 @@ class GameVC: UIViewController {
         }
         else {
             score += 10
-            timeRemaining = 10
+            timeRemaining = difficulty.timeRemaining
             updateLabels()
         }
         
@@ -236,7 +238,7 @@ class GameVC: UIViewController {
     @objc func yesButtonTapped() {
         if colorsMatch() {
             score += 10
-            timeRemaining = 10
+            timeRemaining = difficulty.timeRemaining
             updateLabels()
         }
         else {

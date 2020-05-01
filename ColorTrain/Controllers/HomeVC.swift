@@ -113,14 +113,17 @@ class HomeVC: UIViewController {
     
     @objc func easyButtonTapped() {
         let gameVC = GameVC()
+        gameVC.difficulty = .easy
         self.navigationController?.pushViewController(gameVC, animated: true)
     }
     @objc func mediumButtonTapped() {
         let gameVC = GameVC()
+        gameVC.difficulty = .medium
         self.navigationController?.pushViewController(gameVC, animated: true)
     }
     @objc func hardButtonTapped() {
         let gameVC = GameVC()
+        gameVC.difficulty = .hard
         self.navigationController?.pushViewController(gameVC, animated: true)
     }
     
