@@ -55,6 +55,7 @@ class HomeVC: UIViewController {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Color Train"
+        titleLabel.textColor = .white
         titleLabel.font = UIFont(name: "Avenir Heavy", size: 50)
         titleLabel.underline()
         
@@ -65,7 +66,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(stackView)
-        self.view.backgroundColor = .white
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.black.cgColor, UIColor.lightGray.cgColor]
+        gradient.startPoint = CGPoint.zero
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        view.layer.insertSublayer(gradient, at: 0)
         stackView.addArrangedSubview(easyDifficultyButton)
         stackView.addArrangedSubview(mediumDifficultyButton)
         stackView.addArrangedSubview(hardDifficultyButton)
@@ -97,8 +104,26 @@ class HomeVC: UIViewController {
         
         ])
         
+        
+        easyDifficultyButton.addTarget(self, action: #selector(easyButtonTapped), for: .touchUpInside)
+        mediumDifficultyButton.addTarget(self, action: #selector(mediumButtonTapped), for: .touchUpInside)
+        hardDifficultyButton.addTarget(self, action: #selector(hardButtonTapped), for: .touchUpInside)
 
     }
+    
+    @objc func easyButtonTapped() {
+        let gameVC = GameVC()
+        self.navigationController?.pushViewController(gameVC, animated: true)
+    }
+    @objc func mediumButtonTapped() {
+        let gameVC = GameVC()
+        self.navigationController?.pushViewController(gameVC, animated: true)
+    }
+    @objc func hardButtonTapped() {
+        let gameVC = GameVC()
+        self.navigationController?.pushViewController(gameVC, animated: true)
+    }
+    
     
 }
 

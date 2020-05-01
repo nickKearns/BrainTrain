@@ -16,7 +16,6 @@ enum Color: String, CaseIterable {
     case red
     case yellow
     case green
-    case black
     case purple
     case orange
     
@@ -33,7 +32,6 @@ struct ColorInstance {
         case .red: return UIColor.red
         case .yellow: return UIColor.yellow
         case .green: return UIColor.green
-        case .black: return UIColor.black
         case .purple: return UIColor.purple
         case .orange: return UIColor.orange
         }
@@ -47,7 +45,6 @@ struct ColorInstance {
         case UIColor.red: return "red"
         case UIColor.yellow: return "yellow"
         case UIColor.green: return "green"
-        case UIColor.black: return "black"
         case UIColor.purple: return "purple"
         case UIColor.orange: return "orange"
         default:
@@ -63,7 +60,6 @@ struct ColorInstance {
         case .red: return "red"
         case .yellow: return "yellow"
         case .green: return "green"
-        case .black: return "black"
         case .purple: return "purple"
         case .orange: return "orange"
         }

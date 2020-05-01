@@ -22,7 +22,13 @@ class GameVC: UIViewController {
     
     var colorInstance = ColorInstance()
     
-    
+    var timer = Timer()
+    var timeRemaining = 10 {
+        didSet {
+            timeLabel.text = "Time Left: \(self.timeRemaining)"
+        }
+    }
+
     
     
     let scrollView: UIScrollView = {
@@ -37,6 +43,7 @@ class GameVC: UIViewController {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
         l.font = UIFont(name: "Avenir Heavy", size: 20)
+        l.textColor = .white
         l.text = "Score: 0"
         l.sizeToFit()
         return l
@@ -46,6 +53,7 @@ class GameVC: UIViewController {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
         l.font = UIFont(name: "Avenir Heavy", size: 20)
+        l.textColor = .white
         l.text = "Time:"
         l.sizeToFit()
         return l
@@ -114,7 +122,16 @@ class GameVC: UIViewController {
         // Do any additional setup after loading the view
         view.tintColor = .black
         
-        scrollView.backgroundColor = .white
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.black.cgColor, UIColor.lightGray.cgColor]
+        gradient.startPoint = CGPoint.zero
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+//        view.layer.insertSublayer(gradient, at: 0)
+        
+        scrollView.layer.insertSublayer(gradient, at: 0)
+//        scrollView.backgroundColor = .black
         
         //        generateStep()
         
@@ -128,6 +145,8 @@ class GameVC: UIViewController {
         scrollView.addSubview(yesButton)
         scrollView.addSubview(noButton)
         scrollView.addSubview(startButton)
+        noButton.isEnabled = false
+        yesButton.isEnabled = false
         
         
         
@@ -196,29 +215,34 @@ class GameVC: UIViewController {
     
     @objc func noButtonTapped() {
         if colorsMatch() {
-            score -= 20
             updateLabels()
+            endGame()
         }
         else {
             score += 10
+            timeRemaining = 10
             updateLabels()
         }
         
     }
     
     @objc func startButtonTapped() {
-        
+
+        yesButton.isEnabled = true
+        noButton.isEnabled = true
+        startTimer()
     }
     
     @objc func yesButtonTapped() {
         if colorsMatch() {
-               score += 10
-               updateLabels()
-           }
-           else {
-               score -= 20
-               updateLabels()
-           }
+            score += 10
+            timeRemaining = 10
+            updateLabels()
+        }
+        else {
+            updateLabels()
+            endGame()
+        }
     }
     
     
@@ -235,13 +259,21 @@ class GameVC: UIViewController {
         return colorOfLabel == wordLabel.text!
     }
     
+   
     
+    func endGame() {
+        let gameOverVC = GameOverVC()
+        gameOverVC.score = self.score
+        self.navigationController?.pushViewController(gameOverVC, animated: true)
+    }
     
     
     func getRandomColor() -> Color {
         //get a random color from the Color enum and return it
         return Color.allCases.randomElement()!
     }
+
+    
     
     func updateLabels() {
         
@@ -253,7 +285,7 @@ class GameVC: UIViewController {
         let actualColor = colorInstance.colorToUIColor(color: getRandomColor())
         
         
-    
+        
         
         colorLabel.textColor = actualColor
         colorLabel.text = actualColorText
@@ -263,10 +295,32 @@ class GameVC: UIViewController {
     }
     
     
-    func generateStep() {
-        
+    
+    
+    //MARK: Time Manipulation
+    
+    func startTimer() {
+           //ACTION: create the timer, selector should be runTimer()
+           timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
+       }
+    
+
+    
+    
+    @objc func runTimer() {
+        if timeRemaining > 0 {
+            timeRemaining -= 1
+            setTimeLabel()
+        } else {
+            timer.invalidate()
+            endGame()
+            
+        }
     }
     
+    func setTimeLabel() {
+        timeLabel.text = "Time Left: \(self.timeRemaining)"
+    }
     
 }
 
@@ -288,13 +342,13 @@ extension UILabel{
     }
     
     func underline() {
-       if let textString = text {
+        if let textString = text {
             let attributedString = NSMutableAttributedString(string: textString)
-   attributedString.addAttribute(   NSAttributedString.Key.underlineStyle,
-             value: NSUnderlineStyle.single.rawValue,
-range: NSRange(location: 0,
-length: attributedString.length))
-      attributedText = attributedString
+            attributedString.addAttribute(   NSAttributedString.Key.underlineStyle,
+                                             value: NSUnderlineStyle.single.rawValue,
+                                             range: NSRange(location: 0,
+                                                            length: attributedString.length))
+            attributedText = attributedString
         }
     }
 }
