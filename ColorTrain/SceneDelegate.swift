@@ -21,10 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             
             let window = UIWindow(windowScene: windowScene)
-            let timeline = HomeVC()
+            let firstVC = InfoVC()
             
             
-            let navigation = UINavigationController(rootViewController: timeline)
+            let navigation = UINavigationController(rootViewController: firstVC)
             navigation.navigationBar.isHidden = true
             window.rootViewController = navigation
             

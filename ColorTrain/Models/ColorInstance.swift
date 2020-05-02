@@ -32,11 +32,11 @@ enum Difficulty: Int {
     var timeRemaining: Int {
         switch  self {
         case .easy:
-            return 10
-        case .medium:
             return 7
-        case .hard:
+        case .medium:
             return 5
+        case .hard:
+            return 3
         }
     }
 }

@@ -8,4 +8,6 @@ target 'ColorTrain' do
   # Pods for ColorTrain
    pod 'MaterialComponents/Buttons'
    pod 'MaterialComponents/Buttons'
+   pod 'MaterialComponents/Cards'
+
 end
