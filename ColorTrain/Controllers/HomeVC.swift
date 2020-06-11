@@ -79,20 +79,21 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(stackView)
-        let gradient = CAGradientLayer()
         
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.black.cgColor, UIColor.lightGray.cgColor]
-        gradient.startPoint = CGPoint.zero
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        view.layer.insertSublayer(gradient, at: 0)
+        
+//        let gradient = CAGradientLayer()
+//
+//        gradient.frame = view.bounds
+//        gradient.colors = [UIColor.black.cgColor, UIColor.lightGray.cgColor]
+//        gradient.startPoint = CGPoint.zero
+//        gradient.endPoint = CGPoint(x: 1, y: 1)
+//        view.layer.insertSublayer(gradient, at: 0)
+        
+        self.view.backgroundColor = .systemGray3
+        
         stackView.addArrangedSubview(easyDifficultyButton)
         stackView.addArrangedSubview(mediumDifficultyButton)
         stackView.addArrangedSubview(hardDifficultyButton)
-        stackView.addArrangedSubview(infoLabel)
-        infoLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        infoLabel.numberOfLines = 0
-        infoLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.75).isActive = true
         self.view.addSubview(titleLabel)
 
         setupView()
