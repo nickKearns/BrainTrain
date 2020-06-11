@@ -10,7 +10,6 @@
 		012018822459FF7B002D6827 /* ColorInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012018812459FF7B002D6827 /* ColorInstance.swift */; };
 		0169CFC2245B96CA0023780C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169CFC1245B96CA0023780C /* HomeVC.swift */; };
 		0169CFC4245C9C6A0023780C /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169CFC3245C9C6A0023780C /* GameOverVC.swift */; };
-		0169CFC8245DFDF00023780C /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0169CFC7245DFDF00023780C /* InfoVC.swift */; };
 		0187DE7624478E0A006EE67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187DE7524478E0A006EE67F /* AppDelegate.swift */; };
 		0187DE7824478E0A006EE67F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187DE7724478E0A006EE67F /* SceneDelegate.swift */; };
 		0187DE7A24478E0A006EE67F /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187DE7924478E0A006EE67F /* GameVC.swift */; };
@@ -23,7 +22,6 @@
 		012018812459FF7B002D6827 /* ColorInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInstance.swift; sourceTree = "<group>"; };
 		0169CFC1245B96CA0023780C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		0169CFC3245C9C6A0023780C /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
-		0169CFC7245DFDF00023780C /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		0187DE7224478E0A006EE67F /* ColorTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0187DE7524478E0A006EE67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0187DE7724478E0A006EE67F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				0187DE7924478E0A006EE67F /* GameVC.swift */,
 				0169CFC1245B96CA0023780C /* HomeVC.swift */,
 				0169CFC3245C9C6A0023780C /* GameOverVC.swift */,
-				0169CFC7245DFDF00023780C /* InfoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 				0187DE7624478E0A006EE67F /* AppDelegate.swift in Sources */,
 				0169CFC4245C9C6A0023780C /* GameOverVC.swift in Sources */,
 				012018822459FF7B002D6827 /* ColorInstance.swift in Sources */,
-				0169CFC8245DFDF00023780C /* InfoVC.swift in Sources */,
 				0169CFC2245B96CA0023780C /* HomeVC.swift in Sources */,
 				0187DE7824478E0A006EE67F /* SceneDelegate.swift in Sources */,
 			);

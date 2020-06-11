@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MaterialComponents
 
 
 class GameOverVC: UIViewController {
@@ -25,6 +26,15 @@ class GameOverVC: UIViewController {
         
         
         return label
+    }()
+    
+    let playAgainButton: MDCRaisedButton = {
+       let playAgainButton = MDCRaisedButton()
+        playAgainButton.translatesAutoresizingMaskIntoConstraints = false
+        playAgainButton.setTitle("Play Again", for: .normal)
+        playAgainButton.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.137254902, blue: 1, alpha: 1)
+        
+        return playAgainButton
     }()
     
     
@@ -57,18 +67,27 @@ class GameOverVC: UIViewController {
     func setupView() {
         view.addSubview(gameOverLabel)
         view.addSubview(scoreLabel)
+        view.addSubview(playAgainButton)
         
         
         NSLayoutConstraint.activate([
             gameOverLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             gameOverLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            
             scoreLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            scoreLabel.topAnchor.constraint(equalTo: gameOverLabel.bottomAnchor, constant: 50)
+            scoreLabel.topAnchor.constraint(equalTo: gameOverLabel.bottomAnchor, constant: 50),
+            
+            playAgainButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            playAgainButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -75)
         
         
         ])
         scoreLabel.text = "Your Score: \(self.score)"
 
     }
+    
+    
+    
+    
     
 }
