@@ -50,13 +50,8 @@ class GameOverVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gradient = CAGradientLayer()
         
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.black.cgColor, UIColor.lightGray.cgColor]
-        gradient.startPoint = CGPoint.zero
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        view.layer.insertSublayer(gradient, at: 0)
+        view.backgroundColor = .systemGray3
         
         setupView()
         
@@ -72,7 +67,7 @@ class GameOverVC: UIViewController {
         
         NSLayoutConstraint.activate([
             gameOverLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            gameOverLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            gameOverLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -150),
             
             scoreLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             scoreLabel.topAnchor.constraint(equalTo: gameOverLabel.bottomAnchor, constant: 50),

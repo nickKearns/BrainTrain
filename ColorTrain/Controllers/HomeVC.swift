@@ -81,13 +81,6 @@ class HomeVC: UIViewController {
         self.view.addSubview(stackView)
         
         
-//        let gradient = CAGradientLayer()
-//
-//        gradient.frame = view.bounds
-//        gradient.colors = [UIColor.black.cgColor, UIColor.lightGray.cgColor]
-//        gradient.startPoint = CGPoint.zero
-//        gradient.endPoint = CGPoint(x: 1, y: 1)
-//        view.layer.insertSublayer(gradient, at: 0)
         
         self.view.backgroundColor = .systemGray3
         
