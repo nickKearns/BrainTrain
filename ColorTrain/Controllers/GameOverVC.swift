@@ -83,9 +83,15 @@ class GameOverVC: UIViewController {
         
         ])
         scoreLabel.text = "Your Score: \(self.score)"
+        
+        playAgainButton.addTarget(self, action: #selector(playAgainButtonTapped), for: .touchUpInside)
 
     }
     
+    
+    @objc func playAgainButtonTapped() {
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     
     
