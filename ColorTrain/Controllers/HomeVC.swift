@@ -57,8 +57,16 @@ class HomeVC: UIViewController {
         
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         infoLabel.textAlignment = .center
-        
-        infoLabel.text = "The name of the game is to match the name of the text on the left to the color of the text on the right."
+        infoLabel.font = UIFont(name: "Avenir Heavy", size: 18)
+        infoLabel.textColor = .white
+        infoLabel.underline()
+        infoLabel.numberOfLines = 0
+        infoLabel.text = """
+        The name of the game is to
+        match the name of the text
+        on the left to the color of the
+        text on the right.
+        """
 
         
         return infoLabel
@@ -87,6 +95,7 @@ class HomeVC: UIViewController {
         stackView.addArrangedSubview(easyDifficultyButton)
         stackView.addArrangedSubview(mediumDifficultyButton)
         stackView.addArrangedSubview(hardDifficultyButton)
+        self.view.addSubview(infoLabel)
         self.view.addSubview(titleLabel)
 
         setupView()
@@ -115,12 +124,12 @@ class HomeVC: UIViewController {
         
         ])
         
-//        NSLayoutConstraint.activate([
-//            infoLabel.topAnchor.constraint(equalTo: hardDifficultyButton.bottomAnchor, constant: 50),
-//            infoLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-//
-//        ])
-//
+        NSLayoutConstraint.activate([
+            infoLabel.topAnchor.constraint(equalTo: hardDifficultyButton.bottomAnchor, constant: 50),
+            infoLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+
+        ])
+
         
         easyDifficultyButton.addTarget(self, action: #selector(easyButtonTapped), for: .touchUpInside)
         mediumDifficultyButton.addTarget(self, action: #selector(mediumButtonTapped), for: .touchUpInside)

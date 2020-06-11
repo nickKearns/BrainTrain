@@ -232,6 +232,7 @@ class GameVC: UIViewController {
 
         yesButton.isEnabled = true
         noButton.isEnabled = true
+        startButton.isHidden = true
         startTimer()
     }
     
