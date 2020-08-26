@@ -17,12 +17,12 @@ This project was built using UIKit and the UI was built programmatically
 
 # Home Screen
 
-![Home Screen](screenshot1.png)
+![Home Screen](https://github.com/nickKearns/BrainTrain/blob/master/color%20train%20screenshots/screenshot1.png)
 
 # Main Screen
 
-![Main Screen](screenshot2.png)
+![Main Screen](https://github.com/nickKearns/BrainTrain/blob/master/color%20train%20screenshots/screenshot2.png)
 
 # Game Over Screen
 
-![Game Over Screen](screenshot3.png)
+![Game Over Screen](https://github.com/nickKearns/BrainTrain/blob/master/color%20train%20screenshots/screenshot3.png)
